@@ -3,13 +3,18 @@
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
-  "scripts": {
-    "dev": "NODE_ENV=development tsx server/index.ts",
-    "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
-    "start": "NODE_ENV=production node dist/index.js",
-    "check": "tsc",
-    "db:push": "drizzle-kit push"
-  },
+ "scripts": {
+  "dev": "set NODE_ENV=development && tsx server/index.ts",
+  "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+  "start": "NODE_ENV=production node dist/index.js",
+  "check": "tsc",
+  "db:push": "drizzle-kit push",
+  "client:install": "cd client && npm install",
+  "client:build": "cd client && npm run build",
+  "copy:client": "xcopy /E /Y /I client\\dist server\\public",
+  "start:full": "npm run client:install && npm run client:build && npm run copy:client && npm run dev"
+}
+,
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
     "@jridgewell/trace-mapping": "^0.3.25",
