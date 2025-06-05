@@ -20,6 +20,7 @@ import { Wrench, ArrowLeft, Clock, ArrowLeftRight, RotateCw, Activity } from "lu
 import { Link } from "wouter";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Text } from '@/components/ui/Text';
 
 // Unit Converter Schema
 const unitConverterSchema = z.object({

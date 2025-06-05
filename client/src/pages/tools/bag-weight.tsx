@@ -19,6 +19,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Calculator, ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Separator } from "@/components/ui/separator";
+import { Text } from '@/components/ui/Text';
 
 // Form schema with validation
 const bagWeightSchema = z.object({

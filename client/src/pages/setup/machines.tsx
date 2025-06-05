@@ -11,6 +11,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { toast } from "@/hooks/use-toast";
 import { Machine, Section } from "@shared/schema";
 import { Badge } from "@/components/ui/badge";
+import { Text } from '@/components/ui/Text';
 
 export default function Machines() {
   const queryClient = useQueryClient();
@@ -90,7 +91,7 @@ export default function Machines() {
       cell: (row: { sectionId: string | null }) => getSectionName(row.sectionId),
     },
     {
-      header: "Status",
+      header: <Text ar="الحالة" en="Status" />,
       accessorKey: "isActive",
       cell: (row: { isActive: boolean }) => (
         <Badge variant={row.isActive ? "default" : "secondary"}>
@@ -99,7 +100,7 @@ export default function Machines() {
       ),
     },
     {
-      header: "Actions",
+      header: <Text ar="العمليات" en="Actions" />,
       cell: (row: Machine) => (
         <div className="flex space-x-2">
           <Button variant="ghost" size="icon" onClick={() => handleEdit(row)} className="text-primary-500 hover:text-primary-700">
@@ -123,7 +124,7 @@ export default function Machines() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-secondary-900">Machines</h1>
+        <h1 className="text-2xl font-bold text-secondary-900"><Text ar="إعداد الماكينات" en="Machines" /></h1>
       </div>
 
       <Card>

@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Text } from '@/components/ui/Text';
 
 // Define role permission interface
 interface RolePermission {
@@ -99,7 +100,7 @@ export default function Permissions() {
     },
     {
       id: "7",
-      role: "Operator",
+      role: <Text ar="المشغل" en="Operator" />,
       module: "Dashboard",
       canView: true,
       canCreate: false,
@@ -109,7 +110,7 @@ export default function Permissions() {
     },
     {
       id: "8",
-      role: "Operator",
+      role: <Text ar="المشغل" en="Operator" />,
       module: "Orders",
       canView: true,
       canCreate: false,
@@ -119,7 +120,7 @@ export default function Permissions() {
     },
     {
       id: "9",
-      role: "Operator",
+      role: <Text ar="المشغل" en="Operator" />,
       module: "Inventory",
       canView: true,
       canCreate: false,
@@ -201,7 +202,7 @@ export default function Permissions() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-secondary-900">User Permissions</h1>
+        <h1 className="text-2xl font-bold text-secondary-900"><Text ar="الأذونات" en="Permissions" /></h1>
         <Button onClick={handleSaveChanges}>
           <span className="material-icons text-sm mr-1">save</span>
           Save Changes

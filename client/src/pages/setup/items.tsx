@@ -10,6 +10,7 @@ import { API_ENDPOINTS } from "@/lib/constants";
 import { apiRequest } from "@/lib/queryClient";
 import { toast } from "@/hooks/use-toast";
 import { Item, Category } from "@shared/schema";
+import { Text } from '@/components/ui/Text';
 
 export default function Items() {
   const queryClient = useQueryClient();
@@ -92,7 +93,7 @@ export default function Items() {
       cell: (row: { categoryId: string }) => getCategoryName(row.categoryId),
     },
     {
-      header: "Actions",
+      header: <Text ar="العمليات" en="Actions" />,
       cell: (row: Item) => (
         <div className="flex space-x-2">
           <Button variant="ghost" size="icon" onClick={() => handleEdit(row)} className="text-primary-500 hover:text-primary-700">

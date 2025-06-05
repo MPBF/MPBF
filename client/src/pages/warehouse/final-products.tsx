@@ -14,6 +14,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { formatDateString } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
 import { FinalProduct, JobOrder, CustomerProduct, Order, Customer } from "@shared/schema";
+import { Text } from '@/components/ui/Text';
 
 export default function FinalProducts() {
   const queryClient = useQueryClient();
@@ -189,12 +190,12 @@ export default function FinalProducts() {
       cell: (row: { completedDate: string }) => formatDateString(row.completedDate),
     },
     {
-      header: "Status",
+      header: <Text ar="الحالة" en="Status" />,
       accessorKey: "status",
       cell: (row: { status: string }) => <StatusBadge status={row.status} />,
     },
     {
-      header: "Actions",
+      header: <Text ar="العمليات" en="Actions" />,
       cell: (row: FinalProduct) => (
         <div className="flex space-x-2">
           <Button variant="ghost" size="icon" onClick={() => handleEdit(row)} className="text-primary-500 hover:text-primary-700">
@@ -218,7 +219,7 @@ export default function FinalProducts() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-secondary-900">Final Products</h1>
+        <h1 className="text-2xl font-bold text-secondary-900"><Text ar="المنتجات النهائية" en="Final Products" /></h1>
       </div>
 
       <Card>

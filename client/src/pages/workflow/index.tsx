@@ -7,6 +7,7 @@ import { RollCard } from "@/components/workflow/roll-card";
 import { JobOrdersForExtrusion } from "@/components/workflow/job-orders-for-extrusion-fixed";
 import { API_ENDPOINTS } from "@/lib/constants";
 import { Roll } from "@shared/schema";
+import { Text } from '@/components/ui/Text';
 
 export default function WorkflowIndex() {
   const [activeTab, setActiveTab] = useState("extrusion");
@@ -27,7 +28,7 @@ export default function WorkflowIndex() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-secondary-900">Workflow</h1>
+        <h1 className="text-2xl font-bold text-secondary-900"><Text ar="سير العمل" en="Workflow" /></h1>
         <div className="flex space-x-2">
           <Button variant="outline" className="flex items-center">
             <span className="material-icons text-sm mr-1">filter_list</span>

@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { PageHeader } from "@/components/ui/page-header";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calculator, Droplet, Wrench } from "lucide-react";
+import { Text } from '@/components/ui/Text';
 
 export default function ToolsPage() {
   return (

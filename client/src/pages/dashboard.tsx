@@ -7,6 +7,7 @@ import { ActiveOrdersTable } from "@/components/dashboard/active-orders-table";
 import { Order, Roll, RawMaterial } from "@shared/schema";
 import { useTranslation } from "react-i18next";
 import { useLanguage } from "@/hooks/use-language";
+import { Text } from '@/components/ui/Text';
 
 export default function Dashboard() {
   const { t } = useTranslation();

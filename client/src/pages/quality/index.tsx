@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/ui/page-header";
 import { ClipboardList, FileCheck, ShieldAlert } from "lucide-react";
+import { Text } from '@/components/ui/Text';
 
 export default function QualityIndex() {
   return (

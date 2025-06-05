@@ -10,6 +10,7 @@ import { API_ENDPOINTS } from "@/lib/constants";
 import { apiRequest } from "@/lib/queryClient";
 import { toast } from "@/hooks/use-toast";
 import { Category } from "@shared/schema";
+import { Text } from '@/components/ui/Text';
 
 export default function Categories() {
   const queryClient = useQueryClient();
@@ -78,7 +79,7 @@ export default function Categories() {
       accessorKey: "code",
     },
     {
-      header: "Actions",
+      header: <Text ar="العمليات" en="Actions" />,
       cell: (row: { id: string } & Category) => (
         <div className="flex space-x-2">
           <Button variant="ghost" size="icon" onClick={() => handleEdit(row)} className="text-primary-500 hover:text-primary-700">
@@ -102,7 +103,7 @@ export default function Categories() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-secondary-900">Categories</h1>
+        <h1 className="text-2xl font-bold text-secondary-900"><Text ar="إعداد الفئات" en="Categories" /></h1>
       </div>
 
       <Card>

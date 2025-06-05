@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { OrderDetails } from "@/components/orders/order-details";
 import { OrderForm } from "@/components/orders/order-form";
 import { Card, CardContent } from "@/components/ui/card";
+import { Text } from '@/components/ui/Text';
 
 export default function OrderPage() {
   const params = useParams();
@@ -13,7 +14,7 @@ export default function OrderPage() {
     return (
       <div className="space-y-6">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold text-secondary-900">New Order</h1>
+          <h1 className="text-2xl font-bold text-secondary-900"><Text ar="تفاصيل الطلب" en="Order Details" /></h1>
         </div>
         <OrderForm />
       </div>

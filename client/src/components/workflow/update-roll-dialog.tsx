@@ -326,7 +326,8 @@ export function UpdateRollDialog({ open, onOpenChange, roll }: UpdateRollDialogP
     
     toast({
       title: "Printing Label",
-      description: "3\" × 5\" label for roll " + roll.id + " has been sent to printer",
+              description: `3" × 5" label for roll ${roll.id} has been sent to printer`,
+
     });
   };
 
@@ -541,7 +542,7 @@ export function UpdateRollDialog({ open, onOpenChange, roll }: UpdateRollDialogP
                     disabled={isPrinting}
                   >
                     <span className="material-icons text-sm mr-1">print</span>
-                    {isPrinting ? "Printing..." : "Print Label (3\" × 5\")"}
+                    {isPrinting ? "Printing..." : `Print Label (3" × 5")`}
                   </Button>
                 </>
               )}

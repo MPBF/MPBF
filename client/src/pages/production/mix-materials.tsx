@@ -10,6 +10,7 @@ import { formatDateString } from "@/lib/utils";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { MixMaterialForm } from "@/components/production/mix-material-form";
 import { MixDetails } from "@/components/production/mix-details";
+import { Text } from '@/components/ui/Text';
 
 export default function MixMaterialsPage() {
   const { t } = useTranslation();
@@ -56,7 +57,7 @@ export default function MixMaterialsPage() {
       cell: (row: { totalQuantity: number | null }) => row.totalQuantity?.toFixed(2) || "0.00",
     },
     {
-      header: "Actions",
+      header: <Text ar="العمليات" en="Actions" />,
       id: "actions",
       cell: (row: MixMaterial) => (
         <div className="flex space-x-2">
@@ -188,7 +189,7 @@ export default function MixMaterialsPage() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-primary-700">{t('production.mix_materials.title')}</h1>
+        <h1 className="text-2xl font-bold text-primary-700"><Text ar="خلط المواد" en="Mix Materials" /></h1>
         <div className="flex space-x-2">
           <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
             <DialogTrigger asChild>

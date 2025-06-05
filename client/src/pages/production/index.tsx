@@ -11,6 +11,7 @@ import { JobOrdersForExtrusion } from "@/components/workflow/job-orders-for-extr
 import { API_ENDPOINTS } from "@/lib/constants";
 import { Roll, Order, Customer } from "@shared/schema";
 import { formatDateString } from "@/lib/utils";
+import { Text } from '@/components/ui/Text';
 
 export default function ProductionIndex() {
   const [activeTab, setActiveTab] = useState("orders");
@@ -30,9 +31,9 @@ export default function ProductionIndex() {
   };
 
   const orderColumns = [
-    { header: "Order ID", accessorKey: "id" as const },
+    { header: <Text ar="رقم الطلب" en="Order ID" />, accessorKey: "id" as const },
     {
-      header: "Date",
+      header: <Text ar="التاريخ" en="Date" />,
       accessorKey: "date" as const,
       cell: (row: { date: string }) => formatDateString(row.date),
     },
@@ -42,7 +43,7 @@ export default function ProductionIndex() {
       cell: (row: { customerId: string }) => getCustomerName(row.customerId),
     },
     {
-      header: "Status",
+      header: <Text ar="الحالة" en="Status" />,
       accessorKey: "status" as const,
       cell: (row: { status: string }) => <StatusBadge status={row.status} />,
     },
@@ -52,7 +53,7 @@ export default function ProductionIndex() {
       cell: (row: { note: string | null }) => row.note || "-",
     },
     {
-      header: "Actions",
+      header: <Text ar="العمليات" en="Actions" />,
       id: "actions",
       cell: (row: Order) => (
         <div className="flex space-x-2">
@@ -85,7 +86,7 @@ export default function ProductionIndex() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-secondary-900">Production</h1>
+        <h1 className="text-2xl font-bold text-secondary-900"><Text ar="الإنتاج" en="Production" /></h1>
         <div className="flex space-x-2">
           {activeTab === "orders" && (
             <Link href="/orders/new">

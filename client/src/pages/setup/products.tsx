@@ -10,6 +10,7 @@ import { API_ENDPOINTS } from "@/lib/constants";
 import { apiRequest } from "@/lib/queryClient";
 import { toast } from "@/hooks/use-toast";
 import { CustomerProduct, Customer, Item, Category } from "@shared/schema";
+import { Text } from '@/components/ui/Text';
 
 export default function Products() {
   const queryClient = useQueryClient();
@@ -109,11 +110,11 @@ export default function Products() {
       accessorKey: "sizeCaption",
     },
     {
-      header: "Material",
+      header: <Text ar="المادة" en="Material" />,
       accessorKey: "rawMaterial",
     },
     {
-      header: "Actions",
+      header: <Text ar="العمليات" en="Actions" />,
       cell: (row: CustomerProduct) => (
         <div className="flex space-x-2">
           <Button variant="ghost" size="icon" onClick={() => handleEdit(row)} className="text-primary-500 hover:text-primary-700">
@@ -137,7 +138,7 @@ export default function Products() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-secondary-900">Products</h1>
+        <h1 className="text-2xl font-bold text-secondary-900"><Text ar="إعداد المنتجات" en="Products" /></h1>
       </div>
 
       <Card>

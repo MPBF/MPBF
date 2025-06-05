@@ -33,6 +33,7 @@ import { formatDistanceToNow } from "date-fns";
 import { Customer, Order, JobOrder, SmsMessage } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 import { MessageSquare, RefreshCw } from "lucide-react";
+import { Text } from '@/components/ui/Text';
 
 export default function SmsManagementPage() {
   const queryClient = useQueryClient();

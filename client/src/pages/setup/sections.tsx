@@ -10,6 +10,7 @@ import { API_ENDPOINTS } from "@/lib/constants";
 import { apiRequest } from "@/lib/queryClient";
 import { toast } from "@/hooks/use-toast";
 import { Section } from "@shared/schema";
+import { Text } from '@/components/ui/Text';
 
 export default function Sections() {
   const queryClient = useQueryClient();
@@ -74,7 +75,7 @@ export default function Sections() {
       accessorKey: "name",
     },
     {
-      header: "Actions",
+      header: <Text ar="العمليات" en="Actions" />,
       cell: (row: Section) => (
         <div className="flex space-x-2">
           <Button variant="ghost" size="icon" onClick={() => handleEdit(row)} className="text-primary-500 hover:text-primary-700">
@@ -98,7 +99,7 @@ export default function Sections() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-secondary-900">Sections</h1>
+        <h1 className="text-2xl font-bold text-secondary-900"><Text ar="إعداد الأقسام" en="Sections" /></h1>
       </div>
 
       <Card>

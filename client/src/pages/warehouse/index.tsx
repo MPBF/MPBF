@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { Text } from '@/components/ui/Text';
 
 interface WarehouseCardProps {
   title: string;
@@ -74,7 +75,7 @@ export default function WarehouseIndex() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-secondary-900">Warehouse</h1>
+        <h1 className="text-2xl font-bold text-secondary-900"><Text ar="المخزن" en="Warehouse" /></h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

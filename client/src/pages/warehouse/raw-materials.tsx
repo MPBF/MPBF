@@ -13,6 +13,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { formatDateString } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
 import { RawMaterial } from "@shared/schema";
+import { Text } from '@/components/ui/Text';
 
 export default function RawMaterials() {
   const queryClient = useQueryClient();
@@ -134,7 +135,7 @@ export default function RawMaterials() {
       accessorKey: "type",
     },
     {
-      header: "Quantity",
+      header: <Text ar="الكمية" en="Quantity" />,
       accessorKey: (row: RawMaterial) => `${row.quantity} ${row.unit}`,
     },
     {
@@ -143,7 +144,7 @@ export default function RawMaterials() {
       cell: (row: { lastUpdated: string }) => formatDateString(row.lastUpdated),
     },
     {
-      header: "Actions",
+      header: <Text ar="العمليات" en="Actions" />,
       cell: (row: RawMaterial) => (
         <div className="flex space-x-2">
           <Button variant="ghost" size="icon" onClick={() => handleEdit(row)} className="text-primary-500 hover:text-primary-700">
@@ -167,7 +168,7 @@ export default function RawMaterials() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-secondary-900">Raw Materials</h1>
+        <h1 className="text-2xl font-bold text-secondary-900"><Text ar="المواد الخام" en="Raw Materials" /></h1>
       </div>
 
       <Card>

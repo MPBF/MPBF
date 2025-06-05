@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { Text } from '@/components/ui/Text';
 
 interface SettingCardProps {
   title: string;
@@ -49,7 +50,7 @@ export default function SystemIndex() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-secondary-900">System Settings</h1>
+        <h1 className="text-2xl font-bold text-secondary-900"><Text ar="النظام" en="System" /></h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">

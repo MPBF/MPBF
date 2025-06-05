@@ -10,6 +10,7 @@ import { API_ENDPOINTS } from "@/lib/constants";
 import { apiRequest } from "@/lib/queryClient";
 import { toast } from "@/hooks/use-toast";
 import { Customer, User } from "@shared/schema";
+import { Text } from '@/components/ui/Text';
 
 export default function Customers() {
   const queryClient = useQueryClient();
@@ -103,7 +104,7 @@ export default function Customers() {
       cell: (row: { plateDrawerCode: string | null }) => row.plateDrawerCode || "-",
     },
     {
-      header: "Actions",
+      header: <Text ar="العمليات" en="Actions" />,
       cell: (row: Customer) => (
         <div className="flex space-x-2">
           <Button variant="ghost" size="icon" onClick={() => handleEdit(row)} className="text-primary-500 hover:text-primary-700">

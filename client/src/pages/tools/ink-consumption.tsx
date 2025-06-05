@@ -21,6 +21,7 @@ import { Link } from "wouter";
 import { Separator } from "@/components/ui/separator";
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Text } from '@/components/ui/Text';
 
 // Form schema with validation
 const inkConsumptionSchema = z.object({

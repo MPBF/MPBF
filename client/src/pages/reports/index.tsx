@@ -8,6 +8,7 @@ import { DataTable } from "@/components/ui/data-table";
 import { API_ENDPOINTS } from "@/lib/constants";
 import { formatDateString, formatNumber } from "@/lib/utils";
 import { Order, JobOrder, Roll, CustomerProduct, Customer } from "@shared/schema";
+import { Text } from '@/components/ui/Text';
 
 // Simple line chart component
 function LineChart() {
@@ -130,8 +131,8 @@ export default function ReportsIndex() {
 
   // Report columns
   const productionColumns = [
-    { header: "Order ID", accessorKey: "id" },
-    { header: "Date", accessorKey: "date" },
+    { header: <Text ar="رقم الطلب" en="Order ID" />, accessorKey: "id" },
+    { header: <Text ar="التاريخ" en="Date" />, accessorKey: "date" },
     { header: "Customer", accessorKey: "customer" },
     { header: "Product", accessorKey: "product" },
     { header: "Size", accessorKey: "size" },
@@ -146,13 +147,13 @@ export default function ReportsIndex() {
       cell: (row: { completed: number }) => formatNumber(row.completed, 1),
     },
     { header: "Efficiency", accessorKey: "efficiency" },
-    { header: "Status", accessorKey: "status" },
+    { header: <Text ar="الحالة" en="Status" />, accessorKey: "status" },
   ];
 
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-secondary-900">Reports</h1>
+        <h1 className="text-2xl font-bold text-secondary-900"><Text ar="التقارير" en="Reports" /></h1>
       </div>
 
       <Card>

@@ -12,6 +12,7 @@ import { formatDateString } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
 import { useTranslation } from "react-i18next";
 import { Order, Customer } from "@shared/schema";
+import { Text } from '@/components/ui/Text';
 
 export default function OrdersIndex() {
   const queryClient = useQueryClient();
@@ -131,7 +132,7 @@ export default function OrdersIndex() {
       cell: (row: { note: string | null }) => row.note || "-",
     },
     {
-      header: "Actions",
+      header: <Text ar="العمليات" en="Actions" />,
       cell: (row: Order) => (
         <div className="flex space-x-2">
           <Link href={`/orders/${row.id}`}>
@@ -159,7 +160,7 @@ export default function OrdersIndex() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-secondary-900">{t("orders.title")}</h1>
+        <h1 className="text-2xl font-bold text-secondary-900"><Text ar="قائمة الطلبات" en="Orders List" /></h1>
       </div>
 
       <Card>
